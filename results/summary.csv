@@ -1,0 +1,4 @@
+model_name,model_type,accuracy,p50_latency_ms,p95_latency_ms,parse_errors,total_cost_usd,cost_per_1k_usd
+llama3.2:3b,local,40/50,247.48,270.92,0,$0.000344,$0.0069
+gpt-4o-mini,cheap_api,46/50,250.41,309.78,0,$0.001072,$0.0214
+gpt-4o,top_api,48/50,633.18,730.96,0,$0.017875,$0.3575
