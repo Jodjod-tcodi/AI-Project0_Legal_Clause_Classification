@@ -1,0 +1,5 @@
+scratch/cuad_data/
+scratch/cuad_repo/
+__pycache__/
+*.pyc
+.DS_Store
