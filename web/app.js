@@ -1,10 +1,9 @@
-// Legal Clause Classification Benchmark — Dashboard App
+// Professional Legal Clause Benchmark Inspector
 document.addEventListener("DOMContentLoaded", () => {
   const tableBody = document.getElementById("tableBody");
   const searchInput = document.getElementById("searchInput");
   const categoryFilter = document.getElementById("categoryFilter");
 
-  // Load benchmark dataset items and per-model predictions
   const datasetItems = [
     { id: 1, category: "Governing Law", text: "This Agreement is to be construed according to the laws of the State of Illinois.", llama: "Governing Law", cheap: "Governing Law", top: "Governing Law" },
     { id: 2, category: "Governing Law", text: "This Agreement is governed by English law and the parties submit to the exclusive jurisdiction of the English courts...", llama: "Governing Law", cheap: "Governing Law", top: "Governing Law" },
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { id: 8, category: "Governing Law", text: "This Agreement and any and all matters arising directly or indirectly herefrom shall be governed by and construed in accordance with the internal laws...", llama: "Governing Law", cheap: "Governing Law", top: "Governing Law" },
     { id: 9, category: "Governing Law", text: "This Agreement and the relationship between the Parties shall be governed by, and interpreted in accordance with New York law...", llama: "Governing Law", cheap: "Governing Law", top: "Governing Law" },
     { id: 10, category: "Governing Law", text: "THIS REMARKETING AGREEMENT SHALL BE GOVERNED BY AND CONSTRUED IN ACCORDANCE WITH THE LAWS OF THE STATE OF NEW YORK...", llama: "Governing Law", cheap: "Governing Law", top: "Governing Law" },
-    
+
     { id: 11, category: "Termination", text: "Either party may terminate this Agreement without cause at any time effective upon thirty (30) days' written notice.", llama: "Termination", cheap: "Termination", top: "Termination" },
     { id: 12, category: "Termination", text: "Either Consultant or Company may terminate this Agreement upon prior written notice thereof to the other party.", llama: "Termination", cheap: "Termination", top: "Termination" },
     { id: 13, category: "Termination", text: "Either Party shall have the right to terminate this Agreement before the end of the Term for its convenience upon written notice...", llama: "Termination", cheap: "Termination", top: "Termination" },
@@ -65,34 +64,34 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderTable(items) {
     tableBody.innerHTML = "";
     if (items.length === 0) {
-      tableBody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 2rem; color: #94a3b8;">No matching legal clauses found.</td></tr>`;
+      tableBody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 2rem; color: #64748b;">No matching entries found.</td></tr>`;
       return;
     }
 
     items.forEach((item) => {
       const tr = document.createElement("tr");
 
-      const isLlamaCorrect = item.llama === item.category;
-      const isCheapCorrect = item.cheap === item.category;
-      const isTopCorrect = item.top === item.category;
+      const isLlamaPass = item.llama === item.category;
+      const isCheapPass = item.cheap === item.category;
+      const isTopPass = item.top === item.category;
 
       tr.innerHTML = `
-        <td style="font-weight: 600; color: #64748b;">${item.id}</td>
-        <td class="clause-text-cell">${item.text}</td>
-        <td><span class="badge-gt">${item.category}</span></td>
+        <td style="font-weight: 500; color: #64748b;">${item.id}</td>
+        <td class="clause-text">${item.text}</td>
+        <td><span class="gt-pill">${item.category}</span></td>
         <td>
-          <span class="pred-badge ${isLlamaCorrect ? 'pred-correct' : 'pred-incorrect'}">
-            ${isLlamaCorrect ? '✓' : '✗'} ${item.llama}
+          <span class="pred-pill ${isLlamaPass ? 'pred-pass' : 'pred-fail'}">
+            ${item.llama}
           </span>
         </td>
         <td>
-          <span class="pred-badge ${isCheapCorrect ? 'pred-correct' : 'pred-incorrect'}">
-            ${isCheapCorrect ? '✓' : '✗'} ${item.cheap}
+          <span class="pred-pill ${isCheapPass ? 'pred-pass' : 'pred-fail'}">
+            ${item.cheap}
           </span>
         </td>
         <td>
-          <span class="pred-badge ${isTopCorrect ? 'pred-correct' : 'pred-incorrect'}">
-            ${isTopCorrect ? '✓' : '✗'} ${item.top}
+          <span class="pred-pill ${isTopPass ? 'pred-pass' : 'pred-fail'}">
+            ${item.top}
           </span>
         </td>
       `;
@@ -117,6 +116,5 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInput.addEventListener("input", filterItems);
   categoryFilter.addEventListener("change", filterItems);
 
-  // Initial render
   renderTable(datasetItems);
 });
