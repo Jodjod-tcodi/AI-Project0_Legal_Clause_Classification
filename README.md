@@ -52,3 +52,18 @@ python3 src/run.py gpt-4o top_api
 * **Team Member 2**: Benchmark evaluation runner & local Ollama setup.
 * **Team Member 3**: Scoring parser, accuracy verification & cost calculation logic.
 * **Team Member 4**: Empirical results synthesis, performance analysis & postmortem report.
+
+---
+
+## 5. Interactive Results Dashboard
+
+To visually explore the 3-tier model benchmark metrics, accuracy vs cost trade-off charts, and inspect per-item predictions across all 50 CUAD legal contract clauses:
+
+```bash
+# Serve dashboard locally
+python3 -m http.server 8000 --directory web
+
+# Open http://localhost:8000 in your browser
+```
+Or simply open `web/index.html` directly in any web browser!
+

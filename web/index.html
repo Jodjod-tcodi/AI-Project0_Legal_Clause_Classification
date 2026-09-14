@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Clause Classification Benchmark — CS496 Project 0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-glow font-glow-1"></div>
+  <div class="background-glow font-glow-2"></div>
+
+  <header class="app-header">
+    <div class="header-container">
+      <div class="badge-tag">CS496 AI Engineering • Project 0 Bake-Off</div>
+      <h1>Legal Clause Classification Benchmark</h1>
+      <p class="subtitle">Benchmarking 3 Model Tiers on 50 Verbatim Legal Clauses from The Atticus Project CUAD Dataset</p>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- Quick Stats Metrics Grid -->
+    <section class="metrics-grid">
+      <div class="metric-card glass-card">
+        <div class="metric-icon">📄</div>
+        <div class="metric-content">
+          <span class="metric-value">50</span>
+          <span class="metric-label">Verbatim CUAD Clauses</span>
+        </div>
+      </div>
+      <div class="metric-card glass-card accent-emerald">
+        <div class="metric-icon">🎯</div>
+        <div class="metric-content">
+          <span class="metric-value">96.0%</span>
+          <span class="metric-label">Top Accuracy (GPT-4o)</span>
+        </div>
+      </div>
+      <div class="metric-card glass-card accent-cyan">
+        <div class="metric-icon">⚡</div>
+        <div class="metric-content">
+          <span class="metric-value">247 ms</span>
+          <span class="metric-label">Fastest p50 (Llama 3.2 3B)</span>
+        </div>
+      </div>
+      <div class="metric-card glass-card accent-purple">
+        <div class="metric-icon">💎</div>
+        <div class="metric-content">
+          <span class="metric-value">$0.0069</span>
+          <span class="metric-label">Lowest Cost / 1k (Llama 3.2)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-Tier Model Comparison Cards -->
+    <section class="section-container">
+      <h2 class="section-title">Model Tiers Comparison</h2>
+      <div class="tiers-grid">
+        <!-- Tier 1: Local -->
+        <div class="tier-card glass-card border-local">
+          <div class="tier-badge badge-local">Tier 1 • Open-Weights</div>
+          <h3 class="model-name">Llama 3.2 3B</h3>
+          <div class="model-provider">Local (Ollama @ Apple Silicon)</div>
+
+          <div class="stat-group">
+            <div class="stat-row">
+              <span>Accuracy</span>
+              <span class="stat-val highlight-val">40/50 (80.0%)</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill fill-local" style="width: 80%;"></div>
+            </div>
+          </div>
+
+          <div class="stat-metrics-row">
+            <div class="sub-stat">
+              <span class="sub-label">p50 Latency</span>
+              <span class="sub-val">247 ms</span>
+            </div>
+            <div class="sub-stat">
+              <span class="sub-label">p95 Latency</span>
+              <span class="sub-val">271 ms</span>
+            </div>
+            <div class="sub-stat">
+              <span class="sub-label">Cost / 1k</span>
+              <span class="sub-val">$0.0069</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 2: Cheap API -->
+        <div class="tier-card glass-card border-cheap">
+          <div class="tier-badge badge-cheap">Tier 2 • Cheap API</div>
+          <h3 class="model-name">GPT-4o-mini</h3>
+          <div class="model-provider">OpenAI Cloud API</div>
+
+          <div class="stat-group">
+            <div class="stat-row">
+              <span>Accuracy</span>
+              <span class="stat-val highlight-val">46/50 (92.0%)</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill fill-cheap" style="width: 92%;"></div>
+            </div>
+          </div>
+
+          <div class="stat-metrics-row">
+            <div class="sub-stat">
+              <span class="sub-label">p50 Latency</span>
+              <span class="sub-val">250 ms</span>
+            </div>
+            <div class="sub-stat">
+              <span class="sub-label">p95 Latency</span>
+              <span class="sub-val">310 ms</span>
+            </div>
+            <div class="sub-stat">
+              <span class="sub-label">Cost / 1k</span>
+              <span class="sub-val">$0.0214</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 3: Top API -->
+        <div class="tier-card glass-card border-top">
+          <div class="tier-badge badge-top">Tier 3 • Top API</div>
+          <h3 class="model-name">GPT-4o</h3>
+          <div class="model-provider">OpenAI Flagship API</div>
+
+          <div class="stat-group">
+            <div class="stat-row">
+              <span>Accuracy</span>
+              <span class="stat-val highlight-val">48/50 (96.0%)</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill fill-top" style="width: 96%;"></div>
+            </div>
+          </div>
+
+          <div class="stat-metrics-row">
+            <div class="sub-stat">
+              <span class="sub-label">p50 Latency</span>
+              <span class="sub-val">633 ms</span>
+            </div>
+            <div class="sub-stat">
+              <span class="sub-label">p95 Latency</span>
+              <span class="sub-val">731 ms</span>
+            </div>
+            <div class="sub-stat">
+              <span class="sub-label">Cost / 1k</span>
+              <span class="sub-val">$0.3575</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Trade-off Chart -->
+    <section class="section-container">
+      <h2 class="section-title">Accuracy vs. Cost Trade-off Chart</h2>
+      <div class="chart-card glass-card">
+        <div class="chart-bars-container">
+          <div class="chart-group">
+            <div class="chart-label">Llama 3.2 3B</div>
+            <div class="chart-bar-wrapper">
+              <div class="chart-bar bar-local" style="width: 80.0%;">
+                <span class="bar-val">80.0% ($0.0069/1k)</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-group">
+            <div class="chart-label">GPT-4o-mini</div>
+            <div class="chart-bar-wrapper">
+              <div class="chart-bar bar-cheap" style="width: 92.0%;">
+                <span class="bar-val">92.0% ($0.0214/1k)</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-group">
+            <div class="chart-label">GPT-4o</div>
+            <div class="chart-bar-wrapper">
+              <div class="chart-bar bar-top" style="width: 96.0%;">
+                <span class="bar-val">96.0% ($0.3575/1k)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Item Inspector -->
+    <section class="section-container">
+      <div class="section-header-flex">
+        <h2 class="section-title">Per-Item Benchmark Inspector</h2>
+        <div class="filter-controls">
+          <input type="text" id="searchInput" placeholder="Search contract text..." class="search-input">
+          <select id="categoryFilter" class="category-select">
+            <option value="ALL">All Categories (6)</option>
+            <option value="Governing Law">Governing Law</option>
+            <option value="Termination">Termination</option>
+            <option value="Non-Compete">Non-Compete</option>
+            <option value="Exclusivity">Exclusivity</option>
+            <option value="Indemnification">Indemnification</option>
+            <option value="Confidentiality">Confidentiality</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-card glass-card">
+        <div class="table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Contract Clause Snippet</th>
+                <th>Ground Truth</th>
+                <th>Llama 3.2 3B</th>
+                <th>GPT-4o-mini</th>
+                <th>GPT-4o</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Dynamically rendered by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Legal Clause Classification Benchmark • Built for CS496 AI Engineering Project 0 Bake-Off</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
