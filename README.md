@@ -41,11 +41,11 @@ python3 src/run.py gpt-4o top_api
 
 ## 3. Empirical Results Summary Table (100% Original CUAD Dataset)
 
-| Model Name | Model Type | Accuracy ($n/50$) | p50 Latency (ms) | p95 Latency (ms) | Parse Errors | Cost / 1k Requests |
+| Model Name | Model Type | Accuracy (n/50) | p50 Latency (ms) | p95 Latency (ms) | Parse Errors | Cost / 1k Requests |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Llama 3.2 3B** | Open-Weights (Local) | **40 / 50 (80.0%)** | 247.48 ms | 270.92 ms | 0 | $0.0069 |
-| **GPT-4o-mini** | Cheap API | **46 / 50 (92.0%)** | 250.41 ms | 309.78 ms | 0 | $0.0214 |
-| **GPT-4o** | Top API | **48 / 50 (96.0%)** | 633.18 ms | 730.96 ms | 0 | $0.3575 |
+| **Llama 3.2 3B** | Open-Weights (Local) | **40 / 50 (80.0%)** | 247.48 ms | 270.92 ms | 0 | \$0.0069 |
+| **GPT-4o-mini** | Cheap API | **46 / 50 (92.0%)** | 250.41 ms | 309.78 ms | 0 | \$0.0214 |
+| **GPT-4o** | Top API | **48 / 50 (96.0%)** | 633.18 ms | 730.96 ms | 0 | \$0.3575 |
 
 ---
 
