@@ -9,7 +9,7 @@ This repository benchmarks three model tiers on a **Legal Clause Classification*
 
 ```bash
 # Clone the repository and navigate into it
-git clone https://github.com/your-username/AI-Project0_Legal_Clause_Classification.git
+git clone https://github.com/Jodjod-tcodi/AI-Project0_Legal_Clause_Classification.git
 cd AI-Project0_Legal_Clause_Classification
 
 # Pull local open-weights model via Ollama
@@ -47,3 +47,8 @@ python3 src/run.py gpt-4o top_api
 ---
 
 ## 4. Team Member Contributions
+
+* **Yasmine Jedidi** (Team Lead): Project architecture, task framing, dataset curation & CUAD extraction pipeline.
+* **Team Member 2**: Benchmark evaluation runner & local Ollama setup.
+* **Team Member 3**: Scoring parser, accuracy verification & cost calculation logic.
+* **Team Member 4**: Empirical results synthesis, performance analysis & postmortem report.
