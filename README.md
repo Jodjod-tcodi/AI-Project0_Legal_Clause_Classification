@@ -3,6 +3,9 @@
 ## Overview
 This repository benchmarks three model tiers on a **Legal Clause Classification** task using **100% original, verbatim legal contract clauses** extracted directly from **The Atticus Project CUAD (Contract Understanding Atticus Project)** dataset (`CUADv1.json`). No synthesized or artificial text is used.
 
+> [!NOTE]
+> **Execution Status Note**: Empirical tests for the local open-weights model (**Llama 3.2 3B**) were conducted live on local hardware via Ollama. Commercial API models (**GPT-4o-mini** and **GPT-4o**) are currently run via built-in benchmark simulation for multi-tier project comparison requirements until an `OPENAI_API_KEY` is provided. Supplying an API key automatically switches the runner to live OpenAI API calls.
+
 ---
 
 ## 1. Setup & Requirements

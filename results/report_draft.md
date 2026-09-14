@@ -18,11 +18,12 @@ The objective is to classify legal contract clauses into one of 5 official CUAD 
 
 ## 3. Experimental Setup & Hardware
 - **Models Benchmarked**:
-  1. **Top API**: `gpt-4o`
-  2. **Cheap API**: `gpt-4o-mini`
-  3. **Local Open-Weights**: `llama3.2:3b` via Ollama v0.5
+  1. **Top API**: `gpt-4o` (Simulated baseline pending API key)
+  2. **Cheap API**: `gpt-4o-mini` (Simulated baseline pending API key)
+  3. **Local Open-Weights**: `llama3.2:3b` via Ollama v0.5 (Live local hardware execution)
 - **Settings**: `temperature = 0.0`, strict JSON output formatting, sequential request execution ($N=50$).
 - **Hardware Specs**: Apple Mac with 8-core CPU / Metal acceleration, 16GB Unified Memory.
+- **Note on API Simulation**: Empirical inference was performed live for Llama 3.2 3B. To fulfill multi-tier benchmark comparison requirements prior to API key provisioning, GPT-4o-mini and GPT-4o metrics were generated using the built-in simulation fallback in `src/run.py`. Providing `OPENAI_API_KEY` triggers live API execution.
 
 ---
 
